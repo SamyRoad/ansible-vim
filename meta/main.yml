@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Moisés Maciá
+  description: Install vim package for terminal usage
+  company: SamyRoad
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  - name: Debian
+    versions:
+    - wheezy
+  categories:
+  - development
+  - system
+dependencies: []
