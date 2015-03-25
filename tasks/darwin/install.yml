@@ -1,0 +1,6 @@
+---
+---
+- name: Install vim
+  homebrew: name=vim
+  tags:
+    - vim

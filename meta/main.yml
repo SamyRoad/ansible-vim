@@ -12,6 +12,9 @@ galaxy_info:
   - name: Debian
     versions:
     - wheezy
+  - name: Darwin
+    versions:
+    - all
   categories:
   - development
   - system

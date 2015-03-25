@@ -3,6 +3,8 @@ Vim
 
 Install and configure Vim for terminal usage.
 
+Compatible with Debian/Ubuntu and Mac OSX.
+
 Requirements
 ------------
 

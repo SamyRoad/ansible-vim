@@ -1,10 +1,8 @@
 ---
-- name: Make sure vim-tiny is uninstalled
-  apt: pkg=vim-tiny state=absent purge=true
-  tags:
-    - vim
+# Ubuntu/Debian
+- include: debian/install.yml
+  when: ansible_pkg_mgr == 'apt'
 
-- name: Make sure vim-nox is installed
-  apt: pkg=vim-nox
-  tags:
-    - vim
+# Mac OSX
+- include: darwin/install.ymy
+  when: ansible_os_family == 'Darwin'
