@@ -1,8 +1,16 @@
 ---
+# 
 # Ubuntu/Debian
+#
 - include: debian/install.yml
   when: ansible_pkg_mgr == 'apt'
 
+- include: debian/configure.yml
+  when: ansible_pkg_mgr == 'apt'
+
+
+#
 # Mac OSX
-- include: darwin/install.ymy
+#
+- include: darwin/install.yml
   when: ansible_os_family == 'Darwin'

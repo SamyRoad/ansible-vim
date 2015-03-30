@@ -1,0 +1,7 @@
+---
+# defaults file for vim
+
+# where to install vim config: system or user
+vim_env: system
+
+vim_users: []

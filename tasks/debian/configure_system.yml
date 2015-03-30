@@ -1,0 +1,6 @@
+---
+
+- name: Install default configuration
+  template: src=vimrc.j2 dest={{ vim_root }} owner=root group=root mode=0622
+  tags:
+    - vim
