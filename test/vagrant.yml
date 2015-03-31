@@ -1,0 +1,7 @@
+---
+- name: Test vim
+  hosts: vagrant
+  gather_facts: yes
+  sudo: true
+  roles:
+    - role: vim
