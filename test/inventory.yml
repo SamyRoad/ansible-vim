@@ -1,9 +1,0 @@
-[vagrant]
-vagrant-vim           ansible_ssh_host=192.168.150.1
-
-
-[all:vars]
-ansible_connection=ssh
-ansible_ssh_user=vagrant
-ansible_ssh_port=22
-ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
