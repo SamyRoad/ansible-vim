@@ -1,0 +1,25 @@
+---
+
+- name: [user] Install default configuration
+  template: src=vimrc.j2 dest={{ vim_root_config }} owner={{ item }} group={{ item }} mode=0644
+  with_items: vim_users
+  sudo: true
+  sudo_user: "{{ item }}"
+  tags:
+    - vim
+
+- name: [user] Install default plugins
+  template: src=vimrc.bundles.j2 dest={{ vim_root_bundles }} owner={{ item }} group={{ item }} mode=0644
+  with_items: vim_users
+  sudo: true
+  sudo_user: "{{ item }}"
+  tags:
+    - vim
+
+- name: [user] Install Vundle
+  git: repo=https://github.com/gmarik/Vundle.vim.git dest=/home/{{ item }}/.vim/bundle/Vundle.vim
+  with_items: vim_users
+  sudo: true
+  sudo_user: "{{ item }}"
+  tags:
+    - vim

@@ -3,7 +3,11 @@ if &compatible
 end
 
 filetype off
-set rtp+=/var/lib/vim/addons/Vundle.vim/
+{% if vim_env == "system" %}
+  set rtp+=/var/lib/vim/addons/Vundle.vim/
+{% else %}
+  set rtp+=~/.vim/bundle/Vundle.vim/
+{% endif %}
 call vundle#begin()
 
 " Let Vundle manage Vundle

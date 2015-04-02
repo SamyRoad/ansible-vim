@@ -7,3 +7,6 @@
 
 - include: debian_configure_system.yml
   when: vim_env == "system"
+
+- include: debian_configure_user.yml
+  when: vim_env == "user"

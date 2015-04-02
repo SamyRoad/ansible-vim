@@ -1,0 +1,3 @@
+---
+vim_root_config: ~/.vimrc
+vim_root_bundles: ~/.vimrc.bundles
