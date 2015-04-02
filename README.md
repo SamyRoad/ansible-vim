@@ -5,7 +5,7 @@ Install and configure Vim for terminal usage.
 
 Compatible with Debian/Ubuntu and Mac OSX.
 
-Once installed, you need to run `vim +PluginInstall +qall` in order to install all plugins.
+Once installed, you need to run manually `vim +PluginInstall +qall` in order to install all plugins.
 
 If you need to overwrite any setting or install new plugins, use these files: `~/.vimrc.local` and
 `~/.vimrc.bundles.local`
