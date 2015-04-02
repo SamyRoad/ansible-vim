@@ -12,5 +12,5 @@
 #
 # Mac OSX
 #
-- include: darwin/install.yml
+- include: darwin_install.yml
   when: ansible_os_family == 'Darwin'
