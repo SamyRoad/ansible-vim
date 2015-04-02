@@ -1,2 +1,3 @@
 ---
-vim_root: /etc/vim/vimrc.local
+vim_root_config: /etc/vim/vimrc.local
+vim_root_bundles: /etc/vim/vimrc.bundles

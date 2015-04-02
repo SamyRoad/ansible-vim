@@ -51,6 +51,7 @@ set shm=atIWswxrnmlf " message formats
 set showmode
 set mouse=a
 set laststatus=2     " always display status line
+set background=dark
 
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on          " enable syntax highlight
@@ -61,11 +62,24 @@ command! W :w " for mistyping :w as :W
 let mapleader = ',' " remap leader key to ,
 
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles  " load custom bundles
-endif
+{% if vim_env == "system" %}
+  if filereadable(expand("/etc/vim/vimrc.bundles"))
+    source /etc/vim/vimrc.bundles  " load default plugin bundles
+  endif
+{% else %}
+  if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles  " load custom bundles
+  endif
+{% endif %}
 
 filetype plugin indent on
+
+try
+  let g:solarized_termcolors=256
+  colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+  " deal with it
+endtry
 
 
 " Tab completion

@@ -5,3 +5,21 @@
 vim_env: system
 
 vim_users: []
+
+vim_plugins:
+  - 'tpope/vim-surround'
+  - 'scrooloose/syntastic'
+  - 'vim-scripts/matchit.zip'
+  - 'Raimondi/delimitMate'
+  - 'tpope/vim-rails'
+  - 'vim-scripts/MatchTag'
+  - 'tpope/vim-fugitive'
+  - 'kien/ctrlp.vim'
+  - 'vim-ruby/vim-ruby'
+  - 'scrooloose/nerdtree'
+  - 'godlygeek/tabular.git'
+  - 'majutsushi/tagbar'
+  - 'mileszs/ack.vim'
+  - 'Glench/Vim-Jinja2-Syntax'
+  - 'editorconfig/editorconfig-vim'
+  - 'altercation/vim-colors-solarized'

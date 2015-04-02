@@ -2,10 +2,10 @@
 # 
 # Ubuntu/Debian
 #
-- include: debian/install.yml
+- include: debian_install.yml
   when: ansible_pkg_mgr == 'apt'
 
-- include: debian/configure.yml
+- include: debian_configure.yml
   when: ansible_pkg_mgr == 'apt'
 
 

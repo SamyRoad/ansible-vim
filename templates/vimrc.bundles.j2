@@ -1,0 +1,22 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off
+set rtp+=/var/lib/vim/addons/Vundle.vim/
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Define bundles via Github repos
+{% for plugin in vim_plugins %}
+  Plugin '{{plugin}}'
+{% endfor %}
+
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+call vundle#end()
+filetype on

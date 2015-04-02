@@ -5,5 +5,5 @@
   tags:
     - vim
 
-- include: debian/configure_system.yml
-  when: "{{ vim_env }}" == "system"
+- include: debian_configure_system.yml
+  when: vim_env == "system"
