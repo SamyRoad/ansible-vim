@@ -18,13 +18,9 @@ None.
 Role Variables
 --------------
 
------------------------------------------------------------------------------------------
 | Name          | Description
------------------------------------------------------------------------------------------
 | `vim_env`     | Where to install vim: system or user.<br/> If you install it system-wide, all users will use your default configuration.
-----------------------------------------------------------------------------------------
 | `vim_users`   | List of users to install vim. Use it in conjunction with `vim_env`.
-----------------------------------------------------------------------------------------
 | `vim_plugins` | List of vim plugins to install. Use [Vundle](https://github.com/gmarik/Vundle.vim) format.
 
 Dependencies
