@@ -24,8 +24,6 @@ set ignorecase      " case insensitive search
 set incsearch       " find the next match as we type the search
 set hlsearch        " hilight searches by default
 set cursorline      " highlight current line
-set ruler           " show the cursor position all the time
-set showcmd         " show the command we're typing
 
 " Make it obvious where 120 characters is
 set textwidth=120
@@ -49,12 +47,20 @@ set undoreload=10000 " maximum number lines to save for undo on a buffer reload
 " basic ui settings
 set shm=atIWswxrnmlf " message formats
 set showmode
+set showcmd          " show the command we're typing
 set mouse=a
 set laststatus=2     " always display status line
 set background=dark
+set ruler            " show the cursor position all the time
+set t_ut=
 
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on          " enable syntax highlight
+endif
+
+" tmux color bug fix
+if exists('$TMUX')
+  set term=screen-256color
 endif
 
 " vim behaviour
@@ -81,6 +87,12 @@ catch /^Vim\%((\a\+)\)\=:E185/
   " deal with it
 endtry
 
+
+" handle misstypings
+command! W :w
+command! Q :q
+
+set directory=~/.vim/swp//,/tmp//   " directories for .swp files
 
 " Tab completion
 " will insert tab at beginning of line,

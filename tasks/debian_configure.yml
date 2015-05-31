@@ -10,3 +10,7 @@
 
 - include: debian_configure_user.yml
   when: vim_env == "user"
+
+- debug: msg="Run vim +PluginInstall in order to download installed plugins"
+  tags:
+    - vim
