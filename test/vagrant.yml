@@ -1,7 +1,0 @@
----
-- name: Test vim
-  hosts: all
-  gather_facts: yes
-  sudo: true
-  roles:
-    - role: vim
