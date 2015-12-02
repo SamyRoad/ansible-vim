@@ -11,6 +11,14 @@
     - vim
 
 - name: '[system] Install Vundle'
-  git: repo=https://github.com/gmarik/Vundle.vim.git dest=/var/lib/vim/addons/Vundle.vim
+  git:
+    repo: https://github.com/gmarik/Vundle.vim.git
+    dest: /var/lib/vim/addons/Vundle.vim
+    version: "{{ vim_vundle_version }}"
+  tags:
+    - vim
+
+- name: '[system] Downloads plugins'
+  command: vim +PluginInstall +qal
   tags:
     - vim

@@ -23,3 +23,5 @@ vim_plugins:
   - 'Glench/Vim-Jinja2-Syntax'
   - 'editorconfig/editorconfig-vim'
   - 'altercation/vim-colors-solarized'
+
+vim_vundle_version: 'v0.10.2'
