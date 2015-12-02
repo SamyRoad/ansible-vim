@@ -1,0 +1,23 @@
+---
+
+- stat: path=/usr/bin/vim.tiny
+  register: vim_tiny
+  tags:
+    - vim
+
+- name: Make sure vim-tiny is uninstalled
+  apt: pkg=vim-tiny state=absent purge=true
+  when: vim_tiny.stat.exists == True
+  tags:
+    - vim
+
+- stat: path=/usr/bin/vim.nox
+  register: vim_nox
+  tags:
+    - vim
+
+- name: Make sure vim-nox is installed
+  apt: pkg=vim-nox state=present
+  when: vim_nox.stat.exists == False
+  tags:
+    - vim
