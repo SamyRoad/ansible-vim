@@ -1,16 +1,18 @@
 # Vim
 
+  [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-vim-blue.svg)](https://galaxy.ansible.com/list#/roles/6323)
+
   This is a non opinionated vim config: just install vim and a set of common bundles/plugins. All config, key bindings
   and magical stuff are left to your customizations.
-  
+
   This role it is compatible with Debian/Ubuntu.
-  
+
   We provide a cascade of config files to allow you to set your custom settings and install your desired plugins without
   hassle. Check our use cases.
 
 
 ## Use case #1: install for shared usage
-  
+
   You want to install a custom vim settings and plugins in your remote server. This config is shared between all server
   users, but customized settings for a single user is allowed if you want.
 
@@ -18,7 +20,7 @@
 
   The common config is placed in `/etc/vim/vimrc.local` (for settings) and `/etc/vim/vimrc.bundles` (for plugins).
 
-  If you need to overwrite any setting or install new plugins for a selected user, you need to put your settings in 
+  If you need to overwrite any setting or install new plugins for a selected user, you need to put your settings in
   these files: `~/.vimrc.local` and `~/.vimrc.bundles.local`
 
   **Important**: by default, plugins are installed for `root` user. In all other users you have to install plugins
@@ -36,7 +38,7 @@
 
   The common config is placed in `~/vimrc` (for settings) and `~/vimrc.bundles` (for plugins).
 
-  If you need to overwrite any setting or install new plugins for a selected user, you need to put your settings in 
+  If you need to overwrite any setting or install new plugins for a selected user, you need to put your settings in
   these files: `~/.vimrc.local` and `~/.vimrc.bundles.local`
 
   Refer to [Vundle documentation](https://github.com/VundleVim/Vundle.vim) for plugin management.
