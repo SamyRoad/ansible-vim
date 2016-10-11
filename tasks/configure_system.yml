@@ -1,12 +1,12 @@
 ---
 
-- name: '[system] Install default configurationa'
-  template: src=vimrc.j2 dest={{ vim_root_config }} owner=root group=root mode=0644
+- name: '[system] Install default configurations'
+  template: src=vimrc.j2 dest='{{ vim_root_config }}' owner=root group=root mode=0644
   tags:
     - vim
-
+    
 - name: '[system] Install default plugins'
-  template: src=vimrc.bundles.j2 dest={{ vim_root_bundles }} owner=root group=root mode=0644
+  template: src=vimrc.bundles.j2 dest='{{ vim_root_bundles }}' owner=root group=root mode=0644
   tags:
     - vim
 
