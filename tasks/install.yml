@@ -21,3 +21,8 @@
   when: vim_nox.stat.exists == False
   tags:
     - vim
+
+- name: Install CTags
+  apt: name=exuberant-ctags state=present
+  tags:
+    - vim
