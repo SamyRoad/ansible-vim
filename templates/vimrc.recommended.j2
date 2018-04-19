@@ -1,0 +1,103 @@
+" This file is managed by Ansible, all changes will be lost
+
+" sensitive defaults
+set nocompatible    " don't be compatible with legacy vi
+set number          " show line numbers
+set smartindent
+set backspace=2     " backspace deletes like most editors
+set ttyscroll=3     " improves redraw performance when scroll
+set encoding=utf-8
+set fileformat=unix " endline setted to \n
+set history=500     " store commands, search and marks between vim executions
+set cf              " Enable error files & error jumping
+set autowrite       " automatically :w before running commands
+
+" identation
+filetype indent on
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
+set viminfo='1000,f1,:1000,/1000
+
+set noerrorbells    " do not beep like a crazy bitch
+set ignorecase      " case insensitive search
+set incsearch       " find the next match as we type the search
+set hlsearch        " hilight searches by default
+set cursorline      " highlight current line
+
+" Make it obvious where 120 characters is
+set textwidth=120
+set colorcolumn=+1
+" mark the lines above 120 columns
+highlight OverLength ctermbg=red ctermfg=white gui=undercurl guisp=red
+match OverLength /\%121v.\+/
+" mark the columns that are close to overlength limit
+highlight LineProximity gui=undercurl guisp=orange
+let w:m1=matchadd('LineProximity', '\%<121v.\%>115v', -1)
+
+set nolazyredraw    " don't redraw screen while executing macros
+set synmaxcol=125   " stop rendering syntax colors in long lines (improves rendering performance)
+
+" undo
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000  " maximum number of changes that can be undoed
+set undoreload=10000 " maximum number lines to save for undo on a buffer reload
+
+" basic ui settings
+set shm=atIWswxrnmlf " message formats
+set showmode
+set showcmd          " show the command we're typing
+set mouse=a
+set laststatus=2     " always display status line
+set background=dark
+set ruler            " show the cursor position all the time
+set t_ut=
+
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on          " enable syntax highlight
+endif
+
+" tmux color bug fix
+if exists('$TMUX')
+  set term=screen-256color
+endif
+
+" vim behaviour
+command! W :w " for mistyping :w as :W
+let mapleader = ',' " remap leader key to ,
+
+
+filetype plugin indent on
+
+" not working
+"try
+"  let g:solarized_termcolors=256
+"  colorscheme solarized
+"catch /^Vim\%((\a\+)\)\=:E185/
+"  " deal with it
+"endtry
+
+
+" handle misstypings
+command! W :w
+command! Q :q
+
+set directory=~/.vim/swp//,/tmp//   " directories for .swp files
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>

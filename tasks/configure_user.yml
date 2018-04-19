@@ -16,6 +16,14 @@
   tags:
     - vim
 
+- name: '[user] Install vimrc.recommended'
+  template: src=vimrc.recommended.j2 dest="{{ vim_root_recommended }}" owner="{{ item }}" group="{{ item }}" mode=0644
+  with_items: "{{ vim_users }}"
+  when: ("{{ vim_users }}" is defined and item != "root")
+  become_user: "{{ item }}"
+  tags:
+    - vim
+
 - name: '[user] Install Vundle'
   git:
     repo: https://github.com/gmarik/Vundle.vim.git
