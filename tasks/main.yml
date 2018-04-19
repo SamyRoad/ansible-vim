@@ -6,10 +6,12 @@
   vars:
     vim_root_config: /etc/vim/vimrc.local
     vim_root_bundles: /etc/vim/vimrc.bundles
+    vim_root_recommended: /etc/vim/vimrc.recommended
   when: vim_env == "system"
 
 - include: configure_user.yml
   vars:
     vim_root_config: ~/.vimrc
     vim_root_bundles: ~/.vimrc.bundles
+    vim_root_recommended: ~/.vimrc.recommended
   when: vim_env == "user"

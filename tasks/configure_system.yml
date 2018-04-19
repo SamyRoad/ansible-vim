@@ -10,6 +10,11 @@
   tags:
     - vim
 
+- name: '[system] Install vimrc.recommended'
+  template: src=vimrc.recommended.j2 dest='{{ vim_root_recommended }}' owner=root group=root mode=0644
+  tags:
+    - vim
+
 - name: '[system] Install Vundle'
   git:
     repo: https://github.com/gmarik/Vundle.vim.git

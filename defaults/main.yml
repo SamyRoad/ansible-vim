@@ -25,3 +25,5 @@ vim_plugins:
   - 'altercation/vim-colors-solarized'
 
 vim_vundle_version: 'v0.10.2'
+
+vimrc_recommended: true
