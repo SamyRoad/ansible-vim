@@ -29,6 +29,7 @@
     repo: https://github.com/gmarik/Vundle.vim.git
     dest: "/home/{{ item }}/.vim/bundle/Vundle.vim"
     version: "{{ vim_vundle_version }}"
+    force: yes
   with_items: "{{ vim_users }}"
   when: ("{{ vim_users }}" is defined and item != "root")
   become_user: "{{ item }}"

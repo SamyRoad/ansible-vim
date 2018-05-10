@@ -20,6 +20,7 @@
     repo: https://github.com/gmarik/Vundle.vim.git
     dest: /var/lib/vim/addons/Vundle.vim
     version: "{{ vim_vundle_version }}"
+    force: yes
   tags:
     - vim
 
