@@ -3,7 +3,7 @@
 - name: '[user] Install default configuration'
   template: src=vimrc.j2 dest="{{ vim_root_config }}" owner="{{ item }}" group="{{ item }}" mode=0644
   with_items: "{{ vim_users }}"
-  when: ("{{ vim_users }}" is defined and item != "root")
+  when: (vim_users is defined and item != "root")
   become_user: "{{ item }}"
   tags:
     - vim
@@ -11,7 +11,7 @@
 - name: '[user] Install default plugins'
   template: src=vimrc.bundles.j2 dest="{{ vim_root_bundles }}" owner="{{ item }}" group="{{ item }}" mode=0644
   with_items: "{{ vim_users }}"
-  when: ("{{ vim_users }}" is defined and item != "root")
+  when: (vim_users is defined and item != "root")
   become_user: "{{ item }}"
   tags:
     - vim
@@ -19,7 +19,7 @@
 - name: '[user] Install vimrc.recommended'
   template: src=vimrc.recommended.j2 dest="{{ vim_root_recommended }}" owner="{{ item }}" group="{{ item }}" mode=0644
   with_items: "{{ vim_users }}"
-  when: ("{{ vim_users }}" is defined and item != "root")
+  when: (vim_users is defined and item != "root")
   become_user: "{{ item }}"
   tags:
     - vim
@@ -31,7 +31,7 @@
     version: "{{ vim_vundle_version }}"
     force: yes
   with_items: "{{ vim_users }}"
-  when: ("{{ vim_users }}" is defined and item != "root")
+  when: (vim_users is defined and item != "root")
   become_user: "{{ item }}"
   tags:
     - vim
@@ -39,7 +39,7 @@
 - name: '[user] Download plugins'
   command: "vim +PluginInstall +qal"
   with_items: "{{ vim_users }}"
-  when: ("{{ vim_users }}" is defined and item != "root")
+  when: (vim_users is defined and item != "root")
   become_user: "{{ item }}"
   tags:
     - vim
